@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokenize Your Business — Join the Waitlist</title>
+    <meta name="description" content="Be first to enroll in the Tokenize Your Business course. Learn XRPL tokenization from fundamentals to launch. $497 — early access pricing.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');body{font-family:'Inter',sans-serif}</style>
+</head>
+<body class="bg-gray-950 text-gray-200 min-h-screen flex items-center justify-center">
+    <div class="max-w-lg mx-auto px-4 py-16 text-center">
+        <div class="text-4xl mb-4">🪙</div>
+        <h1 class="text-3xl font-bold text-white mb-3">Tokenize Your Business</h1>
+        <p class="text-gray-400 mb-2">The complete guide to tokenizing real-world assets on the XRP Ledger.</p>
+        <p class="text-sm text-indigo-400 mb-8">8 modules · $497 · Launching soon</p>
+
+        <div class="bg-gray-900 rounded-2xl border border-gray-800 p-8 mb-8">
+            <h2 class="font-semibold text-white mb-4">Get Early Access</h2>
+            <form id="waitlistForm" class="space-y-3">
+                <input id="wlName" type="text" placeholder="Your name" class="w-full bg-gray-800 rounded-lg px-4 py-3 text-sm" required>
+                <input id="wlEmail" type="email" placeholder="your@email.com" class="w-full bg-gray-800 rounded-lg px-4 py-3 text-sm" required>
+                <select id="wlInterest" class="w-full bg-gray-800 rounded-lg px-4 py-3 text-sm text-gray-400">
+                    <option value="">What do you want to tokenize?</option>
+                    <option value="real-estate">Real Estate</option>
+                    <option value="business-equity">Business Equity</option>
+                    <option value="commodity">Commodities (Gold, Silver, etc.)</option>
+                    <option value="revenue-share">Revenue Share / Royalties</option>
+                    <option value="other">Other</option>
+                    <option value="learning">Just Learning</option>
+                </select>
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 rounded-lg px-6 py-3 font-semibold transition">Join Waitlist →</button>
+            </form>
+            <div id="successMsg" class="hidden text-center py-8">
+                <div class="text-3xl mb-3">✅</div>
+                <p class="font-semibold text-white">You're on the list!</p>
+                <p class="text-sm text-gray-400 mt-2">We'll email you when enrollment opens.</p>
+            </div>
+        </div>
+
+        <div class="text-sm text-gray-500 space-y-1">
+            <p>✅ 8 modules covering XRPL fundamentals to launch</p>
+            <p>✅ Legal compliance templates included</p>
+            <p>✅ Free TokenForge Pro access (1 month)</p>
+            <p>✅ 30-day money-back guarantee</p>
+        </div>
+
+        <p class="text-xs text-gray-600 mt-8">By <a href="https://stackstatsapps.com" class="hover:text-gray-400">StackStats Apps LLC</a></p>
+    </div>
+
+    <script>
+    document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+        e.preventDefault()
+        const name = document.getElementById('wlName').value
+        const email = document.getElementById('wlEmail').value
+        const interest = document.getElementById('wlInterest').value
+
+        // For now, send via email until we have a proper backend
+        const subject = encodeURIComponent('Tokenize Course Waitlist: ' + name)
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInterest: ${interest}`)
+        
+        // Hidden mailto fallback
+        window.location.href = `mailto:support@stackstatsapps.com?subject=${subject}&body=${body}`
+        
+        // Show success regardless
+        document.getElementById('waitlistForm').classList.add('hidden')
+        document.getElementById('successMsg').classList.remove('hidden')
+    })
+    </script>
+</body>
+</html>
