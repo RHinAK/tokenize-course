@@ -108,26 +108,27 @@
         </div>
     </div>
 
+    <!-- Disclaimer -->
+    <div class="border-t border-gray-800/50 py-6 px-4">
+        <p class="max-w-3xl mx-auto text-xs text-gray-600 text-center leading-relaxed">
+            <strong>Disclaimer:</strong> This course is for educational purposes only and does not constitute legal, financial, or investment advice. Consult qualified professionals before creating or distributing tokens.
+        </p>
+    </div>
+
     <footer class="py-8 px-4 border-t border-gray-800/50 text-center text-xs text-gray-600">
         © 2026 <a href="https://stackstatsapps.com" class="hover:text-gray-400">StackStats Apps LLC</a> · <a href="mailto:support@stackstatsapps.com" class="hover:text-gray-400">support@stackstatsapps.com</a>
     </footer>
 
     <script>
-    // Stripe checkout links - replace with actual Stripe payment links once created
-    // To set up: Stripe Dashboard → Payment Links → Create
-    // One-time: $497 product
-    // Plan: $179/mo x 3 subscription
-    const STRIPE_ONCE = 'https://buy.stripe.com/REPLACE_WITH_ACTUAL_LINK'
-    const STRIPE_PLAN = 'https://buy.stripe.com/REPLACE_WITH_ACTUAL_LINK'
+    // Stripe Checkout via serverless function
+    // Products and prices created in Stripe:
+    // Course one-time: price_1T1adZKcajgYYZttr8RNtrXl ($497)
+    // Course plan: price_1T1adeKcajgYYZtt4SAVbClp ($179/mo x3)
     
-    document.getElementById('checkoutOnce').href = STRIPE_ONCE
-    document.getElementById('checkoutPlan').href = STRIPE_PLAN
-    
-    // If no Stripe links yet, show email signup
-    if (STRIPE_ONCE.includes('REPLACE')) {
-        document.getElementById('checkoutOnce').href = 'mailto:support@stackstatsapps.com?subject=Tokenize%20Course%20Enrollment%20-%20$497&body=I%20would%20like%20to%20enroll%20in%20the%20Tokenize%20Your%20Business%20course%20(one-time%20$497).'
-        document.getElementById('checkoutPlan').href = 'mailto:support@stackstatsapps.com?subject=Tokenize%20Course%20Enrollment%20-%20Payment%20Plan&body=I%20would%20like%20to%20enroll%20in%20the%20Tokenize%20Your%20Business%20course%20(3x%20$179%20plan).'
-    }
+    // For now, use email-based enrollment until Vercel/CF Worker checkout endpoint is deployed
+    // Admin emails (rodneyhughey@yahoo.com, themahritrust@gmail.com) get free access
+    document.getElementById('checkoutOnce').href = 'mailto:support@stackstatsapps.com?subject=Tokenize%20Course%20Enrollment%20-%20$497&body=I%20would%20like%20to%20enroll%20in%20the%20Tokenize%20Your%20Business%20course%20(one-time%20$497).'
+    document.getElementById('checkoutPlan').href = 'mailto:support@stackstatsapps.com?subject=Tokenize%20Course%20Enrollment%20-%20Payment%20Plan&body=I%20would%20like%20to%20enroll%20in%20the%20Tokenize%20Your%20Business%20course%20(3x%20$179%20plan).'
     </script>
 </body>
 </html>
